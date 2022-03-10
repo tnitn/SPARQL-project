@@ -23,10 +23,9 @@ def get_sents(graph):
     """
     sents = dict()
 
-    for s, p, o in graph:
-        if p.n3(graph.namespace_manager) == "rdfs:comment":
-            # get the id of the sentence without las "_0" as a key, and the content of the sentence as a value
-            sents[s.split("conllu")[1][:-2]] = o.split("text = ")[1]
+    for s, o in g.subject_objects(URIRef("http://www.w3.org/2000/01/rdf-schema#comment")):
+        # get the id of the sentence without last "_0" as a key, and the content of the sentence as a value
+        sents[s.split("conllu")[1][:-2]] = o.split("text = ")[1]
     return sents
 
 
