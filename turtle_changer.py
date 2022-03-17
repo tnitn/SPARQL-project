@@ -31,7 +31,7 @@ def get_sents(graph):
 
 def create_mod_ttl(graph, sentences, dest_name="trial.ttl"):
     """
-    Modified .ttl file is created, each word and sentence instances now additionally containing
+    Modified .ttl file is created, each word ((and sentence)) instances now additionally containing
     predicate "conll:SENT" and object the content of the sentence it belongs to.
     It is done for easier retrieving every sentence during SPARQL querying.
     :param graph: the parsed .ttl file
