@@ -16,6 +16,8 @@ Below can be found queries searching for the same information. All the screensho
 | lemma_TüNDRA | lemma_SPARQL |
 -------------- | --------------
 | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/lemma.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/lemma.png) |
+| **regex_TüNDRA** | **regex_SPARQL**  |
+| \[word = /.\*able/\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s conll:WORD ?word; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent . <br> &nbsp; FILTER regex(?word, ".\*able") <br> } |
 
 ## Conclusion
 
