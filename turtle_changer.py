@@ -49,6 +49,6 @@ def create_mod_ttl(graph, sentences, dest_name="trial.ttl"):
 
 
 if __name__ == "__main__":
-    g = read_turtle("en_atis_small.ttl")
+    g = read_turtle("en_partut.ttl")
     sents = get_sents(g)
-    create_mod_ttl(g, sents)
+    create_mod_ttl(g, sents, "en_partut_adapted.ttl")
