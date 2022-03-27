@@ -4,7 +4,7 @@
 The aim of this project is to compare the efficiency of TüNDRA (.conllu) and SPARQL (.ttl) query languages for retrieving data from linguistic treebanks.
 
 ### Material
-The same databank *UD English-ParTUT* was used to illustrate the difference in queries. The .conllu treebank was accessed directly via [Tündra web tool.](https://weblicht.sfs.uni-tuebingen.de/Tundra/) The .ttl treebank was first downloaded from the [Universal Dependencies website](https://universaldependencies.org/) in the .conllu format, and then transformed into .ttl format with the help of [ConLL-RDF tool.](https://github.com/acoli-repo/conll-rdf) Some further changes were then made to the .ttl file which will be further described in the Description section.
+The same databank *UD English-ParTUT* was used to illustrate the difference in queries. The .conllu treebank was accessed directly via [Tündra web tool.](https://weblicht.sfs.uni-tuebingen.de/Tundra/) The .ttl treebank was first downloaded from the [Universal Dependencies website](https://universaldependencies.org/) in the .conllu format, and then transformed into .ttl format with the help of [ConLL-RDF tool](https://github.com/acoli-repo/conll-rdf) ([en_partut.ttl](en_partut.ttl)). Some further changes were then made to the .ttl file which will be further described in the Description section, with the final file used for querying being [en_partut_adapted.ttl](en_partut_adapted.ttl).
 
 ## Description
 ### .ttl adaptation
