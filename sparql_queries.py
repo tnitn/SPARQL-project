@@ -136,7 +136,7 @@ def word1_and_word2_adj(g, w1, w2):
           FILTER (regex(?sent, ?seq))
         }
     """
-    seq = ' '.join((w1, w2))
+    seq = '\\b' + ' '.join((w1, w2)) + '\\b'
     for r in g.query(q, initBindings={'seq': Literal(seq)}):
         yield r["sent"]
 
@@ -153,9 +153,9 @@ def word1_and_word2_ord(g, w1, w2, start, end=-1):
           FILTER (regex(?sent, ?pat))
         }
     """
-    pat = f'{w1} (\\w+ ){{{start}}}{w2}'
+    pat = f'\\b{w1} (\\w+ ){{{start}}}{w2}\\b'
     if end != -1:
-        pat = f'{w1} (\\w+ ){{{start},{end}}}{w2}'
+        pat = f'\\b{w1} (\\w+ ){{{start},{end}}}{w2}\\b'
     for r in g.query(q, initBindings={'pat': Literal(pat)}):
         yield r["sent"]
 
@@ -296,8 +296,8 @@ if __name__ == "__main__":
     # for sent in word1_and_word2_unord(gr, "flights", "are"):
     #     print(sent)
 
-    # for sent in word1_and_word2_adj(gr, "flights", "are"):
-    #     print(sent)
+    for sent in word1_and_word2_adj(gr, "flights", "are"):
+        print(sent)
 
     # for sent in word1_and_word2_ord(gr, "are", "flights", 1, 2):
     #     print(sent)
@@ -318,5 +318,5 @@ if __name__ == "__main__":
     # for sent in pos1_headOfhead_word2(gr, "VERB", "daily"):
     #     print(sent)
 
-    for sent in pos1_headOf_not_pos2(gr, "PROPN", "ADP"):
-        print(sent)
+    # for sent in pos1_headOf_not_pos2(gr, "PROPN", "ADP"):
+    #     print(sent)
