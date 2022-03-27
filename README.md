@@ -24,6 +24,9 @@ Below can be found queries searching for the same information. All the screensho
 | \[pos = "NOUN" & lemma = /un.\*/\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s conll:POS_COARSE "NOUN"; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:LEMMA ?lemma; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent . <br> &nbsp; FILTER regex(lemma, "^un.\*") <br> } |
 | **adj_word1_and_word2_TüNDRA** | **adj_word1_and_word2_SPARQL** |
 | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/word1_adj_word2.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/word1_adj_word2.png) |
+| **words_atadistance_2_TüNDRA** | **words_atadistance_2_SPARQL** |
+| \[word = "the"\] .2 \[word = "world"\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br> PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s a nif:Sentence; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent <br> &nbsp; FILTER (regex(?sent, "\\\bthe \\\w+ world\\\b")) <br> } |
+| **word_atadistance_2/3_TüNDRA** | **words_atadistance_2/3_SPARQL** |
 
 ## Conclusion
 
