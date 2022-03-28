@@ -35,9 +35,12 @@ Below can be found queries searching for the same information. All the screensho
 | **word1_headOf_word2_TüNDRA** | **word1_headOf_word2_SPARQL** |
 | \[word = "see"\] > \[word = "we"\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s conll:WORD "see" . <br> &nbsp; ?s1 conll:HEAD ?s; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:WORD "we"; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent <br> } |
 | **pos1_headOf_word2_edge_TüNDRA** | **pos1_headOf_word2_edge_SPAQRL** |
+| ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/pos1_word2_edge.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/pos1_word2_edge.png) |
+| **pos1_headOf_not_pos2_TüNDRA** | **pos1_headOf_not_pos2_SPARQL** |
+| \[pos="PROPN"\] !> \[pos="ADP"\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s conll:POS_COARSE "PROPN"; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent . <br> &nbsp; ?s1 conll:HEAD ?s; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:POS_COARSE ?pos; <br> &nbsp; FILTER (?pos != "ADP") <br> } |
 
 
-## Conclusion
+## Limitations
 
 ## References
 * Scott Martens (2013). TüNDRA: A Web Application for Treebank Search and Visualization. In: Proceedings of The Twelfth Workshop on Treebanks and Linguistic Theories (TLT12), Sofia, pp. 133—144. URL: http://bultreebank.org/TLT12/TLT12Proceedings.pdf
