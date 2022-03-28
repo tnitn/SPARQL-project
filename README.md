@@ -41,6 +41,8 @@ Below can be found queries searching for the same information. All the screensho
 
 
 ## Limitations
+All in all, the above quering information given showed a good result, as all the (major) TüNDRA queries can be reproduced in SPARQL. Although TüNDRA syntax is arguably more straightforward and easier to learn than SPARQL syntax, for those who are more used to quering in SPARQL and are advanced in this language, this may appear otherwise. \
+However, tha major disadvantage of SPARQL queries is the limitation of information being possible to retrieve. In comparison to SPARQL, TüNDRA was specifically created for querying linguistic dependency and constituency treebanks, and apart from displaying sentences, it also displays the corresponding tree; table view of each word of the sentence, attributes of which can be added to or deleted from this table "in a click"; statistics of the attributes; as well as another table for showing the table in context. The output of "Statistics" and "Table View" can also be regulated via query itself which is also not available in SPARQL.     
 
 ## References
 * Scott Martens (2013). TüNDRA: A Web Application for Treebank Search and Visualization. In: Proceedings of The Twelfth Workshop on Treebanks and Linguistic Theories (TLT12), Sofia, pp. 133—144. URL: http://bultreebank.org/TLT12/TLT12Proceedings.pdf
