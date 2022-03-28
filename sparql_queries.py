@@ -306,10 +306,10 @@ if __name__ == "__main__":
     # # for sent in pos1_and_pos2_adj(gr, "DET", "PROPN"):
     # #     print(sent)
 
-    # for sent in lemma1_headOf_word2(gr, "boston", "from"):
+    # for sent in word1_headOf_word2(gr, "boston", "from"):
     #     print(sent)
 
-    # for sent in word1_headOf_word2_edge(gr, "flights", "daily", "amod"):
+    # for sent in lemma1_headOf_word2_edge(gr, "flight", "daily", "amod"):
     #     print(sent)
 
     # for sent in word1_headOf_word2_edge1_or_edge2(gr, "flights", "daily", "amod", "cmod"):
