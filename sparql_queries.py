@@ -260,8 +260,7 @@ def pos1_headOf_not_pos2(g, p1, p2):
         
         SELECT ?sent
         WHERE {
-          ?s conll:POS_COARSE ?pos1;
-             conll:WORD ?word .
+          ?s conll:POS_COARSE ?pos1 .
           ?s1 conll:HEAD ?s;
               conll:POS_COARSE ?pos;
               conll:SENT ?sent .
