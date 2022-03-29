@@ -29,7 +29,7 @@ Below can be found queries searching for the same information. All the screensho
 | **words_atadistance_2or3_TüNDRA** | **words_atadistance_2or3_SPARQL** |
 | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/words_atadistance_2or3.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/words_aradistance_2or3.png) |
 | **words_at_any_distance_TüNDRA** | **words_at_any_distance_SPARQL** |
-| \[word = "he"\] .* \[word = "to"\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br> PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s a nif:Sentence; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent <br> &nbsp; FILTER (regex(?sent, "\\bhe\\b.\*\\bto\\b")) <br> } |
+| \[word = "he"\] .* \[word = "to"\] | PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#> <br> PREFIX nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s a nif:Sentence; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent <br> &nbsp; FILTER (regex(?sent, "\\\bhe\\\b.\*\\\bto\\\b")) <br> } |
 | **adj_pos1_and_pos2_TüNDRA** | **adj_pos1_and_pos2_SPARQL** |
 | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/adj_pos1_and_pos2.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/adj_pos1_and_pos2.png) |
 | **word1_headOf_word2_TüNDRA** | **word1_headOf_word2_SPARQL** |
