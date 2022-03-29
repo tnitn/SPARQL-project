@@ -12,6 +12,7 @@ def read_turtle(filename):
     return graph
 
 
+# retrieves all the sentences that contain lemma 'lemma'
 def lemma(g, lemma):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -26,6 +27,7 @@ def lemma(g, lemma):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain word(s) with a part of speech 'pos'
 def pos(g, pos):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -40,6 +42,7 @@ def pos(g, pos):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain words that match the given 'pattern'
 def regex(g, pattern):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -55,6 +58,7 @@ def regex(g, pattern):
         yield r["sent"]
 
 
+# Retrieves all the sentences that contain either word 'word1', or word 'word2' (or both)
 def word1_xor_word2(g, word1, word2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -72,6 +76,7 @@ def word1_xor_word2(g, word1, word2):
         yield r["sent1"] if r["sent1"] else r["sent2"]
 
 
+# Retrieves all the sentences that contain either word 'word1', or word 'word2', or 'word3' (or all three, or any two)
 def word1_xor_word2_xor_word3(g, word1, word2, word3):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -92,6 +97,7 @@ def word1_xor_word2_xor_word3(g, word1, word2, word3):
         yield r["sent1"] if r["sent1"] else r["sent2"] if r["sent2"] else r["sent3"]
 
 
+# retrieves all the sentences that contain words that match the given pattern 'f2', and a part of speech 'f1'
 def feat1_and_feat2(g, f1, f2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -108,6 +114,7 @@ def feat1_and_feat2(g, f1, f2):
         yield r["sent"]
 
 
+# retrieves all th sentences that contain word1 'w1' and word2 'w2' in any order
 def word1_and_word2_unord(g, w1, w2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -124,6 +131,7 @@ def word1_and_word2_unord(g, w1, w2):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain word 'w1' followed by the word 'w2'
 def word1_and_word2_adj(g, w1, w2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -141,6 +149,7 @@ def word1_and_word2_adj(g, w1, w2):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain word 'w1', 'end' minus 'start' words in between, and the word 'w2'
 def word1_and_word2_ord(g, w1, w2, start, end=-1):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -161,6 +170,7 @@ def word1_and_word2_ord(g, w1, w2, start, end=-1):
 
 
 # (!) extremely slow in Python
+# retrieves all the sentences that contain a word with a pos 'pos1' followed by a word with a pos 'pos2'
 def pos1_and_pos2_adj(g, pos1, pos2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -181,6 +191,7 @@ def pos1_and_pos2_adj(g, pos1, pos2):
         yield r["sent1"]
 
 
+# retrieves all the sentences that contain the word 'w2' with the word 'w1' as its head
 def word1_headOf_word2(g, w1, w2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -197,6 +208,8 @@ def word1_headOf_word2(g, w1, w2):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain the word 'w2' with a word with a lemma 'l1' as its head,
+# and 'edge' as the edge between them
 def lemma1_headOf_word2_edge(g, l1, w2, edge):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -214,6 +227,8 @@ def lemma1_headOf_word2_edge(g, l1, w2, edge):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain the word 'w2' with a word 'w1' as its head,
+# and 'e1' or 'e2' as the edge between them
 def word1_headOf_word2_edge1_or_edge2(g, w1, w2, e1, e2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -237,6 +252,7 @@ def word1_headOf_word2_edge1_or_edge2(g, w1, w2, e1, e2):
         yield r["sent1"] if r["sent1"] else r["sent2"]
 
 
+# retrieves all the sentences that contain a word with a pos 'p1', with the word 'w1' as the head of its head
 def pos1_headOfhead_word2(g, p1, w2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -254,6 +270,7 @@ def pos1_headOfhead_word2(g, p1, w2):
         yield r["sent"]
 
 
+# retrieves all the sentences that contain a word, a pos of which is not p2, and which head is a word with a pos 'p1'
 def pos1_headOf_not_pos2(g, p1, p2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
@@ -295,8 +312,8 @@ if __name__ == "__main__":
     # for sent in word1_and_word2_unord(gr, "flights", "are"):
     #     print(sent)
 
-    for sent in word1_and_word2_adj(gr, "flights", "are"):
-        print(sent)
+    # for sent in word1_and_word2_adj(gr, "flights", "are"):
+    #     print(sent)
 
     # for sent in word1_and_word2_ord(gr, "are", "flights", 1, 2):
     #     print(sent)
