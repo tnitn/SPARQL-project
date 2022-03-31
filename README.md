@@ -1,4 +1,4 @@
-# SPARQL-project
+# SPARQL/TüNDRA-project
 
 ## Introduction
 The aim of this project is to compare the efficiency of TüNDRA (.conllu) web tool and SPARQL (.ttl) query language for retrieving data from linguistic treebanks. This repository contains the shortened version of the research; for the more detailed version please access our paper [_"A Comparative Approach to Query an English Dependency Treebank. SPARQL vs. TüNDRA Web Tool"_](https://github.com/tnitn/SPARQL-project/blob/main/A%20Comparative%20Approach%20to%20Query%20an%20English%20Dependency%20Treebank.%20SPARQL%20vs.%20T%C3%BCNDRA%20Web%20Tool.pdf).  
