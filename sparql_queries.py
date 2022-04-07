@@ -59,7 +59,7 @@ def regex(g, pattern):
 
 
 # Retrieves all the sentences that contain either word 'word1', or word 'word2' (or both)
-def word1_xor_word2(g, word1, word2):
+def word1_or_word2(g, word1, word2):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
         
@@ -77,7 +77,7 @@ def word1_xor_word2(g, word1, word2):
 
 
 # Retrieves all the sentences that contain either word 'word1', or word 'word2', or 'word3' (or all three, or any two)
-def word1_xor_word2_xor_word3(g, word1, word2, word3):
+def word1_or_word2_or_word3(g, word1, word2, word3):
     q = """
         PREFIX conll: <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>
         
@@ -300,10 +300,10 @@ if __name__ == "__main__":
     # for sent in regex(gr, "^u."):
     #     print(sent)
     #
-    # for sent in word1_xor_word2(gr, "tuesday", "thursday"):
+    # for sent in word1_or_word2(gr, "tuesday", "thursday"):
     #     print(sent)
     #
-    # for sent in word1_xor_word2_xor_word3(gr, "tuesday", "thursday", "saturday"):
+    # for sent in word1_or_word2_or_word3(gr, "tuesday", "thursday", "saturday"):
     #     print(sent)
     #
     # for sent in feat1_and_feat2(gr, "NOUN", "un.*"):
