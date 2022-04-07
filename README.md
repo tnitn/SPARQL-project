@@ -1,7 +1,7 @@
-# SPARQL-project
+# SPARQL/TüNDRA-project
 
 ## Introduction
-The aim of this project is to compare the efficiency of TüNDRA (.conllu) web tool and SPARQL (.ttl) query language for retrieving data from linguistic treebanks. This repository contains the shortened version of the research; for the more detailed version please access *name of the paper*.  
+The aim of this project is to compare the efficiency of TüNDRA (.conllu) web tool and SPARQL (.ttl) query language for retrieving data from linguistic treebanks. This repository contains the shortened version of the research; for the more detailed version please access our paper [_"A Comparative Approach to Query an English Dependency Treebank. SPARQL vs. TüNDRA Web Tool"_](https://github.com/tnitn/SPARQL-project/blob/main/A%20Comparative%20Approach%20to%20Query%20an%20English%20Dependency%20Treebank.%20SPARQL%20vs.%20T%C3%BCNDRA%20Web%20Tool.pdf).  
 
 ### Material
 The same databank *UD English-ParTUT* was used to illustrate the difference in queries. According to [Universal Dependencies website](https://universaldependencies.org/), this treebank is a conversion of a multilingual parallel treebank which was developed at the University of Turin, and it is made of a different kinds of texts such as legal texts, talks and articles from Wikipedia, among others. The .conllu version was accessed directly via [Tündra web tool.](https://weblicht.sfs.uni-tuebingen.de/Tundra/) The .ttl version was first downloaded from the [Universal Dependencies website](https://universaldependencies.org/) in the .conllu format, and then transformed into .ttl format with the help of [ConLL-RDF tool](https://github.com/acoli-repo/conll-rdf) ([en_partut.ttl](en_partut.ttl)). Some further changes were then made to the .ttl file which will be further described in the Description section, with the final file used for querying being [en_partut_adapted.ttl](en_partut_adapted.ttl).
@@ -48,4 +48,5 @@ The conclusion to draw is that the efficiency of SPARQL is to be improved. For e
 
 ## References
 * Scott Martens (2013). TüNDRA: A Web Application for Treebank Search and Visualization. In: Proceedings of The Twelfth Workshop on Treebanks and Linguistic Theories (TLT12), Sofia, pp. 133—144. URL: http://bultreebank.org/TLT12/TLT12Proceedings.pdf
-* Chiarcos C., Fäth C. (2017), CoNLL-RDF: Linked Corpora Done in an NLP-Friendly Way. In: Gracia J., Bond F., McCrae J., Buitelaar P., Chiarcos C., Hellmann S. (eds) Language, Data, and Knowledge. LDK 2017. pp 74-88. 
+* Chiarcos C., Fäth C. (2017), CoNLL-RDF: Linked Corpora Done in an NLP-Friendly Way. In: Gracia J., Bond F., McCrae J., Buitelaar P., Chiarcos C., Hellmann S. (eds) Language, Data, and Knowledge. LDK 2017. pp 74-88.
+* Apache Jena Fuseki https://jena.apache.org/documentation/fuseki2/
