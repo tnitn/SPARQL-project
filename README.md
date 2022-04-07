@@ -18,8 +18,8 @@ Below can be found queries searching for the same information. All the screensho
 | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/lemma.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/lemma.png) |
 | **regex_TüNDRA** | **regex_SPARQL**  |
 | \[word = /.\*able/\] | PREFIX conll: <<http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s conll:WORD ?word; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent . <br> &nbsp; FILTER regex(?word, ".\*able$") <br> } |
-| **word1_xor_word2_Tündra** | **word1_xor_word2_SPARQL** |
-| ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/word1XorWord2.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/word1XorWord2.png) |
+| **word1_or_word2_Tündra** | **word1_or_word2_SPARQL** |
+| ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/T%C3%BCNDRA%20screenshots/word1OrWord2.png) | ![](https://github.com/tnitn/SPARQL-project/blob/main/screenshots/SPARQL%20screenshots/word1OrWord2.png) |
 | **pos_and_lemma_TüNDRA** | **pos_and_lemma_SPARQL** |
 | \[pos = "NOUN" & lemma = /un.\*/\] | PREFIX conll: <<http://ufal.mff.cuni.cz/conll2009-st/task-description.html#>> <br><br> SELECT ?sent <br> WHERE { <br> &nbsp; ?s conll:POS_COARSE "NOUN"; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:LEMMA ?lemma; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conll:SENT ?sent . <br> &nbsp; FILTER regex(lemma, "^un.\*") <br> } |
 | **adj_word1_and_word2_TüNDRA** | **adj_word1_and_word2_SPARQL** |
